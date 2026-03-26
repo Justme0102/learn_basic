@@ -1,14 +1,19 @@
-weight = float(input("Enter your weight: "))
-uni = input("kilograms or puuds? (K or L): ")
+user_correct = "brayan"
+password_correct = "123123"
+attempts = 0
+max_attempst = 3 
 
-if uni == "K":
-    weight = weight * 2.205
-    uni = "lsb."
-elif uni == "L":
-    weight = weight / 2.205
-    uni = "kgs"
-else:
-    print (f"{uni} was not valid")
-
-print (f"your weight is {round(weight)} {uni}")
+while attempts < max_attempst:
+    user = input("enter your user: ")
+    password = input ("enter your password: ")
     
+    if user == user_correct and password == password_correct:
+        print (f"hello {user_correct} all good ")
+        break
+    else:
+        attempts += 1 
+        print (f"incorrect try againt attemtps left:{max_attempst - attempts}")
+      
+if attempts == max_attempst:
+    print("too many attempts")
+print("end of program")
